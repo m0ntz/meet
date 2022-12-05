@@ -23,8 +23,8 @@ Calendar API to fetch upcoming events.
 
 Scenario 1. When user hasn’t searched for a city, show upcoming events from all cities.
 
-- Given user hasn’t searched for any city When the user opens the app Then the user should see a list of all upcoming events.
+- _Given_ user hasn’t searched for any city _When_ the user opens the app _Then_ the user should see a list of all upcoming events.
 
 Scenario 2. User should see a list of suggestions when they search for a city.
 
-- Given the main page is open When user starts typing in the city textbox Then the user should see a list of cities (suggestions) that match what they’ve typed.
+- _Given_ the main page is open _When_ user starts typing in the city textbox _Then_ the user should see a list of cities (suggestions) that match what they’ve typed.
