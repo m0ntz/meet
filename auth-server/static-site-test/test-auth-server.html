@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
   <style>
     #container {
       max-width: 500px;
@@ -21,16 +20,15 @@
     }
   </style>
 
-
   <main id="container">
     <h1>OAuth2 Test</h1>
-    <h4><b>Step 1:</b> Get the Auth URL</h4>
-    <p>Click the button below to get your auth url.</p>
-    <button id="getCode">Get OAuth URL</button>
+    <h4><b>Step 1:</b> Get the OAuth URL</h4>
+    <p>Click the button below to get your OAuth URL.</p>
+    <button id="getURL">Get OAuth URL</button>
     <p id="result"></p>
-    <a id="authURL" href target="_blank">Click to authorise</a>
+    <a id="authURL" href target="_blank">Click to authorize</a>
+    <!-- STEP 2 -- MAKE SURE STEP 1 WORKS BEFORE MOVING ON-->
 
-    <!--Step 2 -->
     <h4>Step 2: Get your code and exchange for an access token</h4>
     <p>
       After you’re redirected back to your Meet app on GitHub, copy the code
@@ -43,15 +41,16 @@
     <button id="getToken">Get Token</button>
     <p id="accessToken"></p>
   </main>
-
   <script type="text/javascript">
-    const getCodeElement = document.getElementById("getCode");
+    // --------------------- STEP 1
+    const getURLElement = document.getElementById("getURL");
     const resultElement = document.getElementById("result");
     const resultLink = document.getElementById("authURL");
+    // Replace this with your own endpoint
+    const getAuthURL =
+      "https://qvaglcmung.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
 
-    const getAuthURL = "https://qvaglcmung.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
-
-    getCodeElement.onclick = function () {
+    getURLElement.onclick = function () {
       fetch(getAuthURL)
         .then(function (response) {
           return response.json();
@@ -65,8 +64,9 @@
           resultLink.href = authUrl;
         });
     };
+    // --------------------- END OF STEP 1
 
-    // Step 2
+    // --------------------- STEP 2
     const codeValue = document.getElementById("code");
     const getAccessToken = document.getElementById("getToken");
     const accessTokenElement = document.getElementById("accessToken");
@@ -89,6 +89,8 @@
           accessTokenElement.innerText = JSON.stringify(json);
         });
     };
+      // --------------------- END OF STEP 2
+
   </script>
 </body>
 
