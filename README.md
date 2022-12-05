@@ -17,14 +17,14 @@ Calendar API to fetch upcoming events.
 
 ## User Stories
 
-#### Feature 1. Filter events by city.
+### Feature 1. Filter events by city.
 
 > As a user, I would like to be able to filter events by city so that I can see the list of events that take place in that city.
 
-Scenario 1. When user hasn’t searched for a city, show upcoming events from all cities.
+#### Scenario 1. When user hasn’t searched for a city, show upcoming events from all cities.
 
 - _Given_ user hasn’t searched for any city _When_ the user opens the app _Then_ the user should see a list of all upcoming events.
 
-Scenario 2. User should see a list of suggestions when they search for a city.
+#### Scenario 2. User should see a list of suggestions when they search for a city.
 
 - _Given_ the main page is open _When_ user starts typing in the city textbox _Then_ the user should see a list of cities (suggestions) that match what they’ve typed.
