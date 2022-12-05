@@ -1,5 +1,7 @@
 # Meet App
 
+👉 [Open App](https://m0ntz.github.io/meet/)
+
 ## Description
 
 The Meet App is a serverless, progressive web application (PWA) with React using a
@@ -43,8 +45,40 @@ Calendar API to fetch upcoming events.
 
 #### Scenario 2: User can expand an event to see its details.
 
-- _Given_ a user was interested in an event _When_ she clicks on an event _Then_ all event information should be displayed.
+- _Given_ a user was interested in an event _When_ he clicks on an event _Then_ all event information should be displayed.
 
 #### Scenario 3: User can collapse an event to hide its details.
 
-- _Given_ the user got all necessary information on an event _When_ she clicks on a “show less details” button _Then_ the event information should be hidden
+- _Given_ the user got all necessary information on an event _When_ he clicks on a “show less details” button _Then_ the event information should be hidden.
+
+### Feature 3: Specify number of events
+
+> “As a user I should be able to specify the number of events that are displayed so that I can see more or less events at once.”
+
+#### Scenario 1: When user hasn’t specified a number, 32 is the default number.
+
+- _Given_ the user did not specify the number of events to be displayed _When_ he filters events by city _Then_ 32 will be the default number of displayed events.
+
+#### Scenario 2: User can change the number of events they want to see.
+
+- _Given_ the user wanted to see more or less events at once _When_ a filter is applied _Then_ the desired amount of events will be shown.
+
+### Feature 4: Use the app when offline
+
+> “As a user I should be able to access the app at all times so that I can have access to my events when I run out of mobile data or there is no service coverage.”
+
+#### Scenario 1: Show cached data when there’s no internet connection.
+
+- _Given_ the user wanted to access the app on the go, _When_ connection to internet is lost, _Then_ the app should still work by showing data taken from an offline cache.
+
+#### Scenario 2: Show error when user changes the settings (city, time range).
+
+- _Given_ default time and city settings, _When_ a user changes city and time settings, _Then_ an error message should be displayed.
+
+### Feature 5: Data Visualization
+
+> “As a user I should be able to have a clear visualisation of the events in all cities so that I can keep better track of them.”
+
+#### Scenario 1: Show a chart with the number of upcoming events in each city.
+
+- _Given_ the user chooses a specific city _When_ the user wants to view data regarding future events _Then_ the desired visualisation chart will be displayed.
