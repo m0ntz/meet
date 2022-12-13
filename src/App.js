@@ -3,9 +3,7 @@ import "./App.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
-import { mockData } from "./mock-data";
-import { extractLocations } from "./api";
-import { getEvents } from "./api";
+import { extractLocations, getEvents } from "./api";
 
 class App extends Component {
   state = {
