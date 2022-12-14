@@ -1,5 +1,5 @@
-import { mockData } from "./mock-data";
 import axios from "axios";
+import { mockData } from "./mock-data";
 import NProgress from "nprogress";
 /**
  *
