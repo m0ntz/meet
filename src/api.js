@@ -1,5 +1,6 @@
 import axios from "axios";
 import { mockData } from "./mock-data";
+import "./nprogress.css";
 import NProgress from "nprogress";
 /**
  *
@@ -63,7 +64,9 @@ export const getEvents = async () => {
     NProgress.done();
     return mockData;
   }
+
   const token = await getAccessToken();
+
   if (token) {
     removeQuery();
     const url =
@@ -80,6 +83,8 @@ export const getEvents = async () => {
     return result.data.events;
   }
 };
+
+//Export Access Token
 
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem("access_token");
