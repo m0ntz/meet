@@ -42,6 +42,18 @@ describe("<NumberOfEvents /> component", () => {
     );
     expect(NumberOfEventsWrapper.state("numberOfEvents")).toBe(originalValue);
   });
+
+  test("input value is different than original state within range", () => {
+    const newValue = { target: { value: 8 } };
+    const originalValue = NumberOfEventsWrapper.state("numberOfEvents");
+    NumberOfEventsWrapper.find(".number-of-events-input").simulate(
+      "change",
+      newValue
+    );
+    expect(NumberOfEventsWrapper.state("numberOfEvents")).not.toBe(
+      originalValue
+    );
+  });
 });
 
 // Integration Tests
