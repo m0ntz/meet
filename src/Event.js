@@ -13,7 +13,7 @@ class Event extends Component {
     const { collapsed } = this.state;
 
     return (
-      <div>
+      <div className="event">
         <h1 className="summary">{event.summary}</h1>
         <p className="event-start">
           {new Date(event.start.dateTime).toString()}
@@ -32,7 +32,10 @@ class Event extends Component {
           </>
         )}
 
-        <button className="details-button" onClick={() => this.toggleDetails()}>
+        <button
+          className="details-button details-btn"
+          onClick={() => this.toggleDetails()}
+        >
           {collapsed ? "show" : "hide"} details
         </button>
       </div>
