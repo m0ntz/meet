@@ -74,7 +74,7 @@ describe("<App /> integration", () => {
   });
 
   // Integration Tests NumberOfEvents Component
-  test('App passes "numberOfEvents" state as a prop to NumberOfEvents', () => {
+  test('App passes "numberOfEvents" state as a prop to NumberOfEvents component', () => {
     const AppWrapper = mount(<App />);
     const AppNumberOfEventsState = AppWrapper.state("numberOfEvents");
     expect(AppNumberOfEventsState).not.toEqual(undefined);
