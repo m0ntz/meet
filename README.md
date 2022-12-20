@@ -41,15 +41,15 @@ Calendar API to fetch upcoming events.
 
 #### Scenario 1: An event element is collapsed by default.
 
-- _Given_ a user has searched for an specific city, _When_ the list of events is shown, _Then_ all events’ details should be hidden.
+- _Given_ a collapsed event element containing events is loaded on the page, _When_ the user opens the app, _Then_ all events’ details should be hidden.
 
 #### Scenario 2: User can expand an event to see its details.
 
-- _Given_ a user was interested in an event _When_ he clicks on an event _Then_ all event information should be displayed.
+- _Given_ user has seen the list of events _When_ he clicks on an event _Then_ all event information should be displayed.
 
 #### Scenario 3: User can collapse an event to hide its details.
 
-- _Given_ the user got all necessary information on an event _When_ he clicks on a “show less details” button _Then_ the event information should be hidden.
+- _Given_ the user got all necessary information on an event _When_ clicks again on the event button _Then_ the event information should be hidden.
 
 ### Feature 3: Specify number of events
 
@@ -57,11 +57,11 @@ Calendar API to fetch upcoming events.
 
 #### Scenario 1: When user hasn’t specified a number, 32 is the default number.
 
-- _Given_ the user did not specify the number of events to be displayed _When_ he filters events by city _Then_ 32 will be the default number of displayed events.
+- _Given_ user hasn’t specified the number of events _When_ the user opens the events page _Then_ a default number of 32 events is loaded on the page.
 
 #### Scenario 2: User can change the number of events they want to see.
 
-- _Given_ the user wanted to see more or less events at once _When_ a filter is applied _Then_ the desired amount of events will be shown.
+- _Given_ the events page is open _When_ the user changes the number of events _Then_ the event list elements shows the number of events set by the user.
 
 ### Feature 4: Use the app when offline
 
