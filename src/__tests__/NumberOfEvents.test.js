@@ -1,28 +1,72 @@
 import React from "react";
-import { shallow } from "enzyme";
-import NumberOfEvents from "../NumberOfEvents";
+import { mount, shallow } from "enzyme";
+import NumberOfEvents from "../NumberOfEvents.js";
 
 describe("<NumberOfEvents /> component", () => {
   let NumberOfEventsWrapper;
   beforeAll(() => {
-    NumberOfEventsWrapper = shallow(<NumberOfEvents />);
+    NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={() => {}} />);
   });
 
-  test("renders the component", () => {
-    expect(NumberOfEventsWrapper).toBeDefined();
+  test("render element", () => {
+    expect(NumberOfEventsWrapper.find(".number-of-events")).toHaveLength(1);
   });
 
-  test("default number of event value is 32", () => {
-    expect(NumberOfEventsWrapper.find("input.num").prop("type")).toBe("number");
-    expect(NumberOfEventsWrapper.state("num")).toBe(32);
+  test("render input for number of events", () => {
+    expect(NumberOfEventsWrapper.find(".number-of-events-input")).toHaveLength(
+      1
+    );
   });
 
-  test("user changes value for rendered number of events", () => {
-    expect(NumberOfEventsWrapper.state("num")).toBe(32);
+  test("render default input for number of events of 32", () => {
+    expect(
+      NumberOfEventsWrapper.find(".number-of-events-input").prop("value")
+    ).toBe(32);
+  });
 
-    NumberOfEventsWrapper.find("input.num").simulate("change", {
-      target: { value: 24 },
+  test("render change of input number of events within range", () => {
+    const eventObject = { target: { value: 2 } };
+    NumberOfEventsWrapper.find(".number-of-events-input").simulate(
+      "change",
+      eventObject
+    );
+    expect(NumberOfEventsWrapper.state("numberOfEvents")).toBe(2);
+  });
+
+  test("render change of input number of events out of range", () => {
+    const outOfRangeValue = { target: { value: 33 } };
+    const originalValue = NumberOfEventsWrapper.state("numberOfEvents");
+    NumberOfEventsWrapper.find(".number-of-events-input").simulate(
+      "change",
+      outOfRangeValue
+    );
+    expect(NumberOfEventsWrapper.state("numberOfEvents")).toBe(originalValue);
+  });
+
+  test("input value is different than original state within range", () => {
+    const newValue = { target: { value: 8 } };
+    const originalValue = NumberOfEventsWrapper.state("numberOfEvents");
+    NumberOfEventsWrapper.find(".number-of-events-input").simulate(
+      "change",
+      newValue
+    );
+    expect(NumberOfEventsWrapper.state("numberOfEvents")).not.toBe(
+      originalValue
+    );
+  });
+});
+
+// Integration Tests
+
+describe("< NumberOfEvents /> component", () => {
+  let NumberOfEventsWrapper;
+  beforeAll(() => {
+    NumberOfEventsWrapper = mount(<NumberOfEvents />);
+  });
+
+  test("integration for App, NumberOfEvents, and EventList", () => {
+    const NumberOfEventsState = NumberOfEventsWrapper.state({
+      numberOfEvents: 32,
     });
-    expect(NumberOfEventsWrapper.state("num")).toBe(24);
   });
 });
