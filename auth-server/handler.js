@@ -34,7 +34,6 @@ module.exports.getAuthURL = async () => {
     statusCode: 200,
     headers: {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Credentials": true,
     },
     body: JSON.stringify({
       authUrl: authUrl,
@@ -54,6 +53,11 @@ module.exports.getAccessToken = async (event) => {
   const code = decodeURIComponent(`${event.pathParameters.code}`);
 
   return new Promise((resolve, reject) => {
+    /**
+     *  Exchange authorization code for access token with a “callback” after the exchange,
+     *  The callback in this case is an arrow function with the results as parameters: “err” and “token.”
+     */
+
     oAuth2Client.getToken(code, (err, token) => {
       if (err) {
         return reject(err);
@@ -62,16 +66,17 @@ module.exports.getAccessToken = async (event) => {
     });
   })
     .then((token) => {
+      // Respond with OAuth token
       return {
         statusCode: 200,
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Credentials": true,
         },
         body: JSON.stringify(token),
       };
     })
     .catch((err) => {
+      // Handle error
       console.error(err);
       return {
         statusCode: 500,
@@ -84,7 +89,7 @@ module.exports.getAccessToken = async (event) => {
 };
 
 // GET Calendar Events
-module.exports.getCalendarEvents = async (event) => {
+module.exports.getCalendarEvents = (event) => {
   const oAuth2Client = new google.auth.OAuth2(
     client_id,
     client_secret,
@@ -119,19 +124,18 @@ module.exports.getCalendarEvents = async (event) => {
         statusCode: 200,
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Credentials": true,
         },
         body: JSON.stringify({ events: results.data.items }),
       };
     })
-    .catch((err) => {
-      console.error(err);
+    .catch((error) => {
+      console.error(error);
       return {
         statusCode: 500,
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
-        body: JSON.stringify(err),
+        body: JSON.stringify(error),
       };
     });
 };
