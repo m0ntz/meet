@@ -25,7 +25,7 @@ class CitySearch extends Component {
     } else {
       return this.setState({
         query: value,
-        showSuggestions: false,
+        suggestions,
         infoText: "",
       });
     }
