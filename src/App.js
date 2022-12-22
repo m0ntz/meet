@@ -52,7 +52,10 @@ class App extends Component {
         <h2>Find events in your city</h2>
         <div className="container">
           {!navigator.onLine && (
-            <WarningAlert text="You are currently offline. The event list may not be up-to-date." />
+            <WarningAlert
+              text="You are currently offline. The event list may not be up-to-date."
+              className="OfflineAlert"
+            />
           )}
           <CitySearch
             locations={this.state.locations}
