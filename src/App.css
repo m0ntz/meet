@@ -129,7 +129,7 @@ input[type="number"] {
 }
 
 .Alert {
-  /* position: fixed; */
+  position: fixed;
   top: 20px;
 }
 
@@ -197,6 +197,10 @@ input[type="number"] {
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
+
+/* .OfflineAlert  {
+  margin: 0 auto;
+} */
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
