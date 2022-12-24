@@ -51,10 +51,15 @@ class CitySearch extends Component {
           <input
             type="text"
             className="city"
+            placeholder="Type your nearest city"
+            aria-label="Search city"
             value={this.state.query}
             onChange={this.handleInputChanged}
             onFocus={() => {
               this.setState({ showSuggestions: true });
+            }}
+            onBlur={() => {
+              this.setState({ showSuggestions: false });
             }}
           />
         </label>
