@@ -93,10 +93,10 @@ label {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid #e5e5e5;
   border-radius: 4px;
   position: relative;
-  background-color: #c9ada7;
+  background-color: #e5e5e5;
 }
 
 .details-btn {
