@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { PieChart, Pie, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, ResponsiveContainer, Legend, Cell } from "recharts";
 
 const EventGenre = ({ events }) => {
   const [data, setData] = useState([]);
+  const colors = ["#eae2e6", "#cd7389", "#9297C4", "#60bad7", "#fadba9"];
+
   useEffect(() => {
     const getData = () => {
       const genres = ["React", "JavaScript", "Node", "jQuery", "AngularJS"];
@@ -16,6 +18,7 @@ const EventGenre = ({ events }) => {
     };
     setData(() => getData());
   }, [events]);
+
   return (
     <ResponsiveContainer height={400}>
       <PieChart width={400} height={400}>
@@ -30,7 +33,12 @@ const EventGenre = ({ events }) => {
           label={({ name, percent }) =>
             `${name} ${(percent * 100).toFixed(0)}%`
           }
-        ></Pie>
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={colors[index]} />
+          ))}
+        </Pie>
+        <Legend verticalAlign="bottom" height={50} />
       </PieChart>
     </ResponsiveContainer>
   );

@@ -31,7 +31,7 @@ class NumberOfEvents extends Component {
         <div className="number-of-events">
           <ErrorAlert text={this.state.errorText} />
           <label>
-            Number of Events:
+            📆 Number of Events
             <input
               type="number"
               className="number-of-events-input"

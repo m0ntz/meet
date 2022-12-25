@@ -47,11 +47,11 @@ class CitySearch extends Component {
       <div className="CitySearch">
         <InfoAlert text={this.state.infoText} />
         <label>
-          City:
+          📍 Location
           <input
             type="text"
             className="city"
-            placeholder="Type your nearest city"
+            placeholder="search city"
             aria-label="Search city"
             value={this.state.query}
             onChange={this.handleInputChanged}
@@ -63,6 +63,7 @@ class CitySearch extends Component {
             }}
           />
         </label>
+
         <ul
           className="suggestions"
           style={this.state.showSuggestions ? {} : { display: "none" }}
