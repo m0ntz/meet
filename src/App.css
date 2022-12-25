@@ -117,13 +117,13 @@ label {
   position: absolute;
   right: 5px;
   bottom: 5px;
-  padding: 12px 15px;
+  padding: 11px 15px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
   background-color: #22223b;
   color: #ffffff;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .name {
@@ -236,6 +236,13 @@ label {
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
     flex-direction: row;
+  }
+  .EventList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin-top: 20px;
+    grid-auto-rows: minmax(100px, auto);
   }
   .data-vis-wrapper .recharts-responsive-container {
     flex-basis: 50%;
