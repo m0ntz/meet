@@ -87,7 +87,6 @@ class App extends Component {
         )}
         <h1>Welcome to Meet</h1>
         <h2>Find Tech Events In Your City</h2>
-
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
@@ -96,7 +95,6 @@ class App extends Component {
           numberOfEvents={this.state.numberOfEvents}
           updateEvents={this.updateEvents}
         />
-
         <div className="data-vis-wrapper">
           <EventGenre events={this.state.events} />
           <ResponsiveContainer height={400}>

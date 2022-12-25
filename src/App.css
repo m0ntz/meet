@@ -76,7 +76,7 @@ label {
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: #eee;
+  background-color: #9a8c98;
   cursor: default;
 }
 
@@ -86,7 +86,7 @@ label {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #c9ada7;
 }
 
 .event {
@@ -107,7 +107,7 @@ label {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  background-color: #4a4e69;
+  background-color: #fca311;
 }
 
 .name {
