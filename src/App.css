@@ -17,6 +17,10 @@ p {
   margin: 5px 0;
 }
 
+.App h1 {
+  color: #f2e9e4;
+}
+
 h2 {
   font-size: 3em;
   color: #fca311;
@@ -44,6 +48,7 @@ input[type="number"] {
 
 label {
   font-size: 16px;
+  color: #f2e9e4;
 }
 
 .city {
@@ -89,25 +94,36 @@ label {
   background-color: #c9ada7;
 }
 
+.event h1 {
+  color: #14213d;
+}
+
+.event h3 {
+  font-size: 25px;
+  color: #14213d;
+}
+
 .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #9a8c98;
   border-radius: 4px;
   position: relative;
-  background-color: #e5e5e5;
+  background-color: #c9ada7;
 }
 
 .details-btn {
   position: absolute;
   right: 5px;
   bottom: 5px;
-  padding: 5px 8px;
+  padding: 12px 15px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  background-color: #fca311;
+  background-color: #22223b;
+  color: #ffffff;
+  font-size: 13px;
 }
 
 .name {

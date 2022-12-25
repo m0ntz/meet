@@ -25,7 +25,7 @@ class Event extends Component {
         {!collapsed && (
           <>
             <div className="details">
-              <h2 className="about">About event:</h2>
+              <h3 className="about">About event:</h3>
               <a className="link" href={event.htmlLink}>
                 See details on Google Calendar
               </a>
@@ -38,7 +38,7 @@ class Event extends Component {
           className="details-button details-btn"
           onClick={() => this.toggleDetails()}
         >
-          {collapsed ? "show" : "hide"} details
+          {collapsed ? "SHOW" : "HIDE"} DETAILS
         </button>
       </div>
     );
