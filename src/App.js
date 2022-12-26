@@ -4,11 +4,10 @@ import "./nprogress.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
-import { extractLocations, getEvents, checkToken } from "./api";
+import { extractLocations, getEvents, checkToken, getAccessToken } from "./api";
 import EventGenre from "./EventGenre";
-// getAccessToken } from "./api";
 import { WarningAlert } from "./Alert";
-// import WelcomeScreen from "./WelcomeScreen";
+import WelcomeScreen from "./WelcomeScreen";
 import {
   ScatterChart,
   Scatter,
@@ -130,12 +129,12 @@ class App extends Component {
         <div className="events-container">
           <EventList events={this.state.events} />
         </div>
-        {/* <WelcomeScreen
+        <WelcomeScreen
           showWelcomeScreen={this.state.showWelcomeScreen}
           getAccessToken={() => {
             getAccessToken();
           }}
-        /> */}
+        />
       </div>
     );
   }
