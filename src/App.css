@@ -57,7 +57,7 @@ label {
 }
 
 .number-of-events-input {
-  width: 100px;
+  width: 130px;
 }
 .CitySearch {
   display: flex;
@@ -113,6 +113,7 @@ label {
   color: #14213d;
   font-size: 28px;
   margin-top: 9px;
+  height: 70px;
 }
 
 .event h3 {
@@ -145,6 +146,11 @@ label {
   background-color: #22223b;
   color: #ffffff;
   font-size: 12px;
+  border: none;
+}
+
+.details-btn:hover {
+  opacity: 0.8;
 }
 
 .name {
