@@ -128,6 +128,10 @@ label {
   background-color: #f2e9e4;
 }
 
+.event-location {
+  height: 45px;
+}
+
 .details-btn {
   position: absolute;
   right: 5px;
