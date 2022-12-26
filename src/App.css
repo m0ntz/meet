@@ -151,6 +151,7 @@ label {
 
 .details-btn:hover {
   opacity: 0.8;
+  border: none;
 }
 
 .name {
