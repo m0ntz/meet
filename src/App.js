@@ -82,19 +82,23 @@ class App extends Component {
       return <div className="App" />;
     return (
       <div className="App">
+        <div className="hero-container">
+          <h1>Welcome to Meet</h1>
+          <h2>Find Tech Events In Your City</h2>
+        </div>
         {!navigator.onLine && (
           <WarningAlert text="You are currently offline. The event list may not be up-to-date." />
         )}
-        <h1>Welcome to Meet</h1>
-        <h2>Find Tech Events In Your City</h2>
-        <CitySearch
-          locations={this.state.locations}
-          updateEvents={this.updateEvents}
-        />
-        <NumberOfEvents
-          numberOfEvents={this.state.numberOfEvents}
-          updateEvents={this.updateEvents}
-        />
+        <div className="top-container">
+          <CitySearch
+            locations={this.state.locations}
+            updateEvents={this.updateEvents}
+          />
+          <NumberOfEvents
+            numberOfEvents={this.state.numberOfEvents}
+            updateEvents={this.updateEvents}
+          />
+        </div>
         <div className="data-vis-wrapper">
           <EventGenre events={this.state.events} />
           <ResponsiveContainer height={400}>
@@ -123,7 +127,9 @@ class App extends Component {
             </ScatterChart>
           </ResponsiveContainer>
         </div>
-        <EventList events={this.state.events} />
+        <div className="events-container">
+          <EventList events={this.state.events} />
+        </div>
         {/* <WelcomeScreen
           showWelcomeScreen={this.state.showWelcomeScreen}
           getAccessToken={() => {
