@@ -20,6 +20,12 @@ Calendar API to fetch upcoming events.
 - Add an app shortcut to the home screen.
 - View a chart showing the number of upcoming events by city.
 
+## Tech Stack
+- React
+- TDD technique
+- API
+- AWS lambda
+
 ## User Stories
 
 ### Feature 1. Filter events by city
